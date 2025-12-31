@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx50r2rkq4ir7"]
+
+[ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://player.tscn" id="1_7rv6a"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7rv6a"]
+viewport_path = NodePath("Player/SubViewport")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Terrain" type="Node" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(19.5681, 0, 0, 0, 1, 0, 0, 0, 2.5561695, -10.505432, 0, -30.543169)
+use_collision = true
+size = Vector3(2.0737305, 1, 31.09668)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5506439, 5.568512, -31.675083)
+radius = 1.3920898
+height = 15.1953125
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Terrain"]
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.614143, 6.9882965, -52.7814)
+radius = 2.043457
+height = 14.176758
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3376465, 8.149372, -31.37667)
+size = Vector3(19.675293, 2.7436523, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_7rv6a")]
+
+[node name="DisplayLayer" type="CanvasLayer" parent="."]
+
+[node name="Low-Res Display" type="TextureRect" parent="DisplayLayer"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_7rv6a")
+expand_mode = 1
+stretch_mode = 6
+
+[editable path="Player"]
