@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckk4bvumkee2c"
-path="res://.godot/imported/Metal07-metallic.jpg-55565387113d5711b4ffc6f9b069c75d.ctex"
+uid="uid://dptypxb2krnlv"
+path="res://.godot/imported/Metal07-roughness.jpg-ef7e292322e6940da0f7718469e2115f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Metal07-metallic.jpg"
-dest_files=["res://.godot/imported/Metal07-metallic.jpg-55565387113d5711b4ffc6f9b069c75d.ctex"]
+source_file="res://corner_bookcase_cabinet/Metal07-roughness.jpg"
+dest_files=["res://.godot/imported/Metal07-roughness.jpg-ef7e292322e6940da0f7718469e2115f.ctex"]
 
 [params]
 

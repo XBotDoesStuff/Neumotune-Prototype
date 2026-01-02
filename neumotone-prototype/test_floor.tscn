@@ -19,6 +19,7 @@ size = Vector3(2.0737305, 1, 31.09668)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5506439, 5.568512, -31.675083)
+use_collision = true
 radius = 1.3920898
 height = 15.1953125
 
@@ -37,6 +38,25 @@ size = Vector3(19.675293, 2.7436523, 1)
 [node name="blockbench_export" parent="Terrain" instance=ExtResource("3_7ncgk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.928814, 3.523172, -20.754822)
 script = ExtResource("2_gnoy4")
+target_layer = 1
+
+[node name="head" parent="Terrain/blockbench_export/Node/godot/head2" index="0"]
+layers = 512
+
+[node name="cylinder" parent="Terrain/blockbench_export/Node/godot/torso" index="0"]
+layers = 512
+
+[node name="hand L" parent="Terrain/blockbench_export/Node/godot/torso/hand_L" index="0"]
+layers = 512
+
+[node name="hand L2" parent="Terrain/blockbench_export/Node/godot/torso/hand_R" index="0"]
+layers = 512
+
+[node name="leg L" parent="Terrain/blockbench_export/Node/godot/leg_L" index="0"]
+layers = 512
+
+[node name="leg R" parent="Terrain/blockbench_export/Node/godot/leg_R" index="0"]
+layers = 512
 
 [node name="Sketchfab_Scene" parent="Terrain" instance=ExtResource("2_76l1q")]
 transform = Transform3D(0.1, 0, 0, 0, 0.09999998, 0, 0, 0, 0.1, -11.042122, 0.53872347, -29.08963)
@@ -46,6 +66,24 @@ layers = 512
 
 [node name="Material22" parent="Terrain/Sketchfab_Scene/Sketchfab_model/Collada visual scene group" index="1"]
 layers = 512
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.71915, 3.5557294, -32.20218)
+layers = 0
+use_collision = true
+size = Vector3(5.4008484, 6.4832764, 1.4677124)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(0.7100256, 0, -0.70417583, 0, 1, 0, 0.70417583, 0, 0.7100256, -9.586103, 3.495152, -30.444159)
+layers = 0
+use_collision = true
+size = Vector3(5.4008484, 6.4832764, 1.4677124)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-0.014921989, 0, -0.99988866, 0, 1, 0, 0.99988866, 0, -0.014921989, -7.767364, 3.482264, -26.204895)
+layers = 0
+use_collision = true
+size = Vector3(5.3957367, 6.4832764, 1.4677124)
 
 [node name="Player" parent="." instance=ExtResource("1_7rv6a")]
 
@@ -82,9 +120,6 @@ offset_bottom = 222.0
 grow_horizontal = 0
 expand_mode = 1
 stretch_mode = 4
-
-[node name="VisibleLayers" type="Node" parent="."]
-script = ExtResource("2_gnoy4")
 
 [editable path="Terrain/blockbench_export"]
 [editable path="Terrain/Sketchfab_Scene"]
