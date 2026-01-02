@@ -32,11 +32,14 @@ size = Vector3(19.675293, 2.7436523, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_7rv6a")]
 
+[node name="CharacterBody3D" parent="Player" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2759466, 0)
+
 [node name="ShitPort" parent="Player" index="1"]
-size = Vector2i(46, 46)
+size = Vector2i(50, 50)
 
 [node name="Camera3D" parent="Player/GoodPort" index="0"]
-fov = 50.5
+fov = 37.8
 
 [node name="DisplayLayer" type="CanvasLayer" parent="."]
 script = ExtResource("2_6gfq0")
@@ -51,5 +54,15 @@ grow_vertical = 2
 texture = SubResource("ViewportTexture_7rv6a")
 expand_mode = 1
 stretch_mode = 6
+
+[node name="High-Res Display" type="TextureRect" parent="DisplayLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -417.0
+offset_bottom = 222.0
+grow_horizontal = 0
+expand_mode = 1
+stretch_mode = 4
 
 [editable path="Player"]
