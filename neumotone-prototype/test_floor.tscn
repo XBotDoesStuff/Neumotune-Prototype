@@ -29,7 +29,6 @@ environment = SubResource("Environment_vpurg")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.54317445, -0.17026424, 0.82217497, 0, 0.97922283, 0.2027873, -0.8396199, -0.11014888, 0.53188884, -0.4187317, 18.384361, -1.9376316)
 light_color = Color(0.9939856, 0.87661743, 0.8557874, 1)
-light_negative = true
 shadow_enabled = true
 
 [node name="Terrain" type="Node" parent="."]
