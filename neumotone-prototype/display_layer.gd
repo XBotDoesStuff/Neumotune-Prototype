@@ -1,7 +1,7 @@
 extends CanvasLayer
 @onready var shit_port: SubViewport = $"../Player/ShitPort"
 @onready var good_port: SubViewport = $"../Player/GoodPort"
-@onready var player: CharacterBody3D = $"../Player/CharacterBody3D"
+@onready var player: CharacterBody3D = $"../Player"
 
 @onready var low_res_display: TextureRect = $"Low-Res Display"
 @onready var high_res_display: TextureRect = $"High-Res Display"
