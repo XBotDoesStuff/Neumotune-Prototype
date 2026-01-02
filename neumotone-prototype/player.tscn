@@ -22,12 +22,18 @@ shape = SubResource("CapsuleShape3D_4k7ck")
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9970827, 0)
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="ShitPort" type="SubViewport" parent="."]
 size = Vector2i(256, 144)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="ShitPort"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4743619, 0.61416245)
 attributes = SubResource("CameraAttributesPhysical_4k7ck")
 compositor = SubResource("Compositor_7rv6a")
 current = true
+
+[node name="GoodPort" type="SubViewport" parent="."]
+size = Vector2i(1920, 1080)
+render_target_update_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="GoodPort"]

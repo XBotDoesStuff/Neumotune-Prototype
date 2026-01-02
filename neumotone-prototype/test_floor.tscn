@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx50r2rkq4ir7"]
+[gd_scene load_steps=4 format=3 uid="uid://bx50r2rkq4ir7"]
 
 [ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://player.tscn" id="1_7rv6a"]
+[ext_resource type="Script" uid="uid://bgcnqf48jx6n4" path="res://display_layer.gd" id="2_6gfq0"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_7rv6a"]
-viewport_path = NodePath("Player/SubViewport")
 
 [node name="Node3D" type="Node3D"]
 
@@ -32,10 +32,17 @@ size = Vector3(19.675293, 2.7436523, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_7rv6a")]
 
+[node name="ShitPort" parent="Player" index="1"]
+size = Vector2i(46, 46)
+
+[node name="Camera3D" parent="Player/GoodPort" index="0"]
+fov = 50.5
+
 [node name="DisplayLayer" type="CanvasLayer" parent="."]
+script = ExtResource("2_6gfq0")
 
 [node name="Low-Res Display" type="TextureRect" parent="DisplayLayer"]
-texture_filter = 1
+texture_filter = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
