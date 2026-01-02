@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx50r2rkq4ir7"]
+[gd_scene load_steps=6 format=3 uid="uid://bx50r2rkq4ir7"]
 
 [ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://player.tscn" id="1_7rv6a"]
 [ext_resource type="Script" uid="uid://bgcnqf48jx6n4" path="res://display_layer.gd" id="2_6gfq0"]
+[ext_resource type="PackedScene" uid="uid://cr0ybpr1nxgeu" path="res://corner_bookcase_cabinet/scene.gltf" id="2_76l1q"]
+[ext_resource type="PackedScene" uid="uid://cp84hei6jeo37" path="res://model.gltf" id="3_7ncgk"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_7rv6a"]
 
@@ -23,6 +25,7 @@ height = 15.1953125
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.614143, 6.9882965, -52.7814)
+layers = 512
 radius = 2.043457
 height = 14.176758
 
@@ -30,12 +33,43 @@ height = 14.176758
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3376465, 8.149372, -31.37667)
 size = Vector3(19.675293, 2.7436523, 1)
 
+[node name="blockbench_export" parent="Terrain" instance=ExtResource("3_7ncgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.928814, 3.523172, -20.754822)
+
+[node name="head" parent="Terrain/blockbench_export/Node/godot/head2" index="0"]
+layers = 512
+
+[node name="cylinder" parent="Terrain/blockbench_export/Node/godot/torso" index="0"]
+layers = 512
+
+[node name="hand L" parent="Terrain/blockbench_export/Node/godot/torso/hand_L" index="0"]
+layers = 512
+
+[node name="hand L2" parent="Terrain/blockbench_export/Node/godot/torso/hand_R" index="0"]
+layers = 512
+
+[node name="leg L" parent="Terrain/blockbench_export/Node/godot/leg_L" index="0"]
+layers = 512
+
+[node name="leg R" parent="Terrain/blockbench_export/Node/godot/leg_R" index="0"]
+layers = 512
+
+[node name="Sketchfab_Scene" parent="Terrain" instance=ExtResource("2_76l1q")]
+transform = Transform3D(0.1, 0, 0, 0, 0.09999998, 0, 0, 0, 0.1, -11.042122, 0.53872347, -29.08963)
+
+[node name="Material2" parent="Terrain/Sketchfab_Scene/Sketchfab_model/Collada visual scene group" index="0"]
+layers = 512
+
+[node name="Material22" parent="Terrain/Sketchfab_Scene/Sketchfab_model/Collada visual scene group" index="1"]
+layers = 512
+
 [node name="Player" parent="." instance=ExtResource("1_7rv6a")]
 
 [node name="ShitPort" parent="Player" index="1"]
 size = Vector2i(46, 46)
 
 [node name="Camera3D" parent="Player/GoodPort" index="0"]
+cull_mask = 1048063
 fov = 50.5
 
 [node name="DisplayLayer" type="CanvasLayer" parent="."]
@@ -52,4 +86,6 @@ texture = SubResource("ViewportTexture_7rv6a")
 expand_mode = 1
 stretch_mode = 6
 
+[editable path="Terrain/blockbench_export"]
+[editable path="Terrain/Sketchfab_Scene"]
 [editable path="Player"]
