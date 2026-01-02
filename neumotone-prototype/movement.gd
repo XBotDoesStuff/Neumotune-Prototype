@@ -8,10 +8,10 @@ var mouse_sensitivity = 0.002
 var snapshot_texture : Texture
 
 @onready var player_cam: Camera3D = $Camera3D
-@onready var shitport_cam: Camera3D = $"../ShitPort/Camera3D"
-@onready var shit_port: SubViewport = $"../ShitPort"
-@onready var good_port: SubViewport = $"../GoodPort"
-@onready var goodport_cam: Camera3D = $"../GoodPort/Camera3D"
+@onready var shitport_cam: Camera3D = $"ShitPort/Camera3D"
+@onready var shit_port: SubViewport = $ShitPort
+@onready var good_port: SubViewport = $GoodPort
+@onready var goodport_cam: Camera3D = $"GoodPort/Camera3D"
 
 
 func _ready():
@@ -20,8 +20,10 @@ func _ready():
 
 
 func _process(_delta):
-	shitport_cam.global_transform = player_cam.global_transform
-	goodport_cam.global_transform = player_cam.global_transform
+	if shitport_cam:
+		shitport_cam.global_transform = player_cam.global_transform
+	if goodport_cam:
+		goodport_cam.global_transform = player_cam.global_transform
 	
 	if Input.is_action_just_pressed("pause"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
