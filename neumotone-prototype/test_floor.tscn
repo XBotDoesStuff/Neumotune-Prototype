@@ -84,9 +84,6 @@ grow_horizontal = 0
 expand_mode = 1
 stretch_mode = 4
 
-[node name="VisibleLayers" type="Node" parent="."]
-script = ExtResource("2_gnoy4")
-
 [editable path="Terrain/blockbench_export"]
 [editable path="Terrain/Sketchfab_Scene"]
 [editable path="Player"]
