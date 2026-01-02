@@ -130,7 +130,7 @@ size = Vector3(128.55765, 12.739136, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4511006, 0)
 
 [node name="ShitPort" parent="Player" index="2"]
-size = Vector2i(49, 49)
+size = Vector2i(80, 45)
 
 [node name="Camera3D" parent="Player/GoodPort" index="0"]
 cull_mask = 1048063
