@@ -28,7 +28,6 @@ height = 15.1953125
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.614143, 6.9882965, -52.7814)
 layers = 512
-use_collision = true
 radius = 2.043457
 height = 14.176758
 
@@ -69,20 +68,20 @@ layers = 512
 [node name="Material22" parent="Terrain/Sketchfab_Scene/Sketchfab_model/Collada visual scene group" index="1"]
 layers = 512
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Terrain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.71915, 3.5557294, -32.20218)
+[node name="CSGBox3D3" type="CSGBox3D" parent="Terrain/Sketchfab_Scene"]
+transform = Transform3D(10, 0, 0, 0, 10.000003, 0, 0, 0, 10, -26.770279, 30.170069, -31.125488)
 layers = 0
 use_collision = true
 size = Vector3(5.4008484, 6.4832764, 1.4677124)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Terrain"]
-transform = Transform3D(0.7100256, 0, -0.70417583, 0, 1, 0, 0.70417583, 0, 0.7100256, -9.586103, 3.495152, -30.444159)
+[node name="CSGBox3D4" type="CSGBox3D" parent="Terrain/Sketchfab_Scene"]
+transform = Transform3D(7.100256, 0, -7.0417585, 0, 10.000003, 0, 7.0417585, 0, 7.100256, 14.560181, 29.564295, -13.545288)
 layers = 0
 use_collision = true
 size = Vector3(5.4008484, 6.4832764, 1.4677124)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Terrain"]
-transform = Transform3D(-0.014921989, 0, -0.99988866, 0, 1, 0, 0.99988866, 0, -0.014921989, -7.767364, 3.482264, -26.204895)
+[node name="CSGBox3D5" type="CSGBox3D" parent="Terrain/Sketchfab_Scene"]
+transform = Transform3D(-0.1492199, 0, -9.998886, 0, 10.000003, 0, 9.998886, 0, -0.1492199, 32.74758, 29.435415, 28.847351)
 layers = 0
 use_collision = true
 size = Vector3(5.3957367, 6.4832764, 1.4677124)
@@ -91,7 +90,7 @@ size = Vector3(5.3957367, 6.4832764, 1.4677124)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4511006, 0)
 
 [node name="ShitPort" parent="Player" index="2"]
-size = Vector2i(49, 49)
+size = Vector2i(80, 45)
 
 [node name="Camera3D" parent="Player/GoodPort" index="0"]
 cull_mask = 1048063
