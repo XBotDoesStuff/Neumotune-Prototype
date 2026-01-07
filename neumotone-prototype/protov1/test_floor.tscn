@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx50r2rkq4ir7"]
+[gd_scene load_steps=13 format=3 uid="uid://bx50r2rkq4ir7"]
 
-[ext_resource type="PackedScene" uid="uid://cp84hei6jeo37" path="res://protov1/model.gltf" id="1_b6wvh"]
-[ext_resource type="Script" uid="uid://b3rwr8k0wlqq0" path="res://proto2/swap_mesh_layers.gd" id="2_tl4rv"]
-[ext_resource type="PackedScene" uid="uid://cr0ybpr1nxgeu" path="res://protov1/corner_bookcase_cabinet/scene.gltf" id="3_yqray"]
-[ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://protov1/player.tscn" id="4_qld7m"]
-[ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://protov1/display_layer.tscn" id="5_xgf7v"]
+[ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://protov1/player.tscn" id="1_7rv6a"]
+[ext_resource type="Script" uid="uid://bgcnqf48jx6n4" path="res://protov1/display_layer.gd" id="2_6gfq0"]
+[ext_resource type="PackedScene" uid="uid://cr0ybpr1nxgeu" path="res://protov1/corner_bookcase_cabinet/scene.gltf" id="2_76l1q"]
+[ext_resource type="Script" uid="uid://b3rwr8k0wlqq0" path="res://Scripts/swap_mesh_layers.gd" id="2_gnoy4"]
+[ext_resource type="PackedScene" uid="uid://cp84hei6jeo37" path="res://protov1/model.gltf" id="3_7ncgk"]
+[ext_resource type="PackedScene" uid="uid://q7yu2l0nvmsy" path="res://protov1/office_desk___6mb/scene.gltf" id="6_tl4rv"]
+[ext_resource type="PackedScene" uid="uid://jlidl14s805w" path="res://protov1/keycard/scene.gltf" id="7_yqray"]
+[ext_resource type="Script" uid="uid://blxmxwe85tpun" path="res://Scripts/keycard.gd" id="8_qld7m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gnoy4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -134,6 +137,13 @@ cull_mask = 1048063
 fov = 50.5
 
 [node name="DisplayLayer" parent="." instance=ExtResource("5_xgf7v")]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("6_tl4rv")]
+transform = Transform3D(-0.951589, 0, 0.30737332, 0, 1, 0, -0.30737332, 0, -0.951589, 9.894794, 0.5000019, -35.062454)
+
+[node name="Keycard" parent="." instance=ExtResource("7_yqray")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 10.886842, 2.4002602, -36.363533)
+script = ExtResource("8_qld7m")
 
 [editable path="Terrain/blockbench_export"]
 [editable path="Terrain/Sketchfab_Scene"]

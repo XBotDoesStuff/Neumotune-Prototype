@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -6,6 +7,8 @@ var jump_speed = 15
 var mouse_sensitivity = 0.002
 
 var snapshot_texture : Texture
+
+var inventroy = []
 
 @onready var player_cam: Camera3D = $Camera3D
 @onready var shitport_cam: Camera3D = $"ShitPort/Camera3D"
@@ -17,7 +20,7 @@ var snapshot_texture : Texture
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	player_cam.current = false
-
+	GlobalManager.player = self
 
 func _process(_delta):
 	if shitport_cam:
