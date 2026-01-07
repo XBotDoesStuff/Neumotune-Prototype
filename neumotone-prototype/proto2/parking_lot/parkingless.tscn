@@ -1198,7 +1198,7 @@ mesh = SubResource("ArrayMesh_5c463")
 skeleton = NodePath("")
 
 [node name="Base_fencebase_mat_0" type="MeshInstance3D" parent="Sketchfab_model/Parking_FBX/RootNode/Base"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4450302, 0.38075447, 2.6634216)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4450302, 0.38075447, 1.7214984)
 mesh = SubResource("ArrayMesh_685y4")
 skeleton = NodePath("")
 
@@ -1283,6 +1283,7 @@ mesh = SubResource("ArrayMesh_vouvo")
 skeleton = NodePath("")
 
 [node name="Base_Lights_m_0" type="MeshInstance3D" parent="Sketchfab_model/Parking_FBX/RootNode/Base"]
+layers = 0
 mesh = SubResource("ArrayMesh_hpo24")
 skeleton = NodePath("")
 

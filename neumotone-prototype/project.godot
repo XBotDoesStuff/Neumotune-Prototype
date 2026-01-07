@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Neumotone Prototype"
-run/main_scene="uid://bx50r2rkq4ir7"
+run/main_scene="uid://dls3khprgoy0h"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://protov1/icon.svg"
 
