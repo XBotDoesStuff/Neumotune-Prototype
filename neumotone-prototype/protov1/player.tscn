@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://b7xjqs64oeumo" path="res://protov1/movement.gd" id="1_4flbx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4k7ck"]
-radius = 1.0
-height = 4.0
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_4k7ck"]
 
@@ -17,7 +15,7 @@ script = ExtResource("1_4flbx")
 shape = SubResource("CapsuleShape3D_4k7ck")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="ShitPort" type="SubViewport" parent="."]
 size = Vector2i(256, 144)

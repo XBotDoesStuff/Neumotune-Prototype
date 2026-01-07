@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bx50r2rkq4ir7"]
+[gd_scene load_steps=9 format=3 uid="uid://bx50r2rkq4ir7"]
 
-[ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://protov1/player.tscn" id="1_7rv6a"]
-[ext_resource type="Script" uid="uid://bgcnqf48jx6n4" path="res://protov1/display_layer.gd" id="2_6gfq0"]
-[ext_resource type="PackedScene" uid="uid://cr0ybpr1nxgeu" path="res://protov1/corner_bookcase_cabinet/scene.gltf" id="2_76l1q"]
-[ext_resource type="Script" uid="uid://b3rwr8k0wlqq0" path="res://swap_mesh_layers.gd" id="2_gnoy4"]
-[ext_resource type="PackedScene" uid="uid://cp84hei6jeo37" path="res://protov1/model.gltf" id="3_7ncgk"]
+[ext_resource type="PackedScene" uid="uid://cp84hei6jeo37" path="res://protov1/model.gltf" id="1_b6wvh"]
+[ext_resource type="Script" uid="uid://b3rwr8k0wlqq0" path="res://proto2/swap_mesh_layers.gd" id="2_tl4rv"]
+[ext_resource type="PackedScene" uid="uid://cr0ybpr1nxgeu" path="res://protov1/corner_bookcase_cabinet/scene.gltf" id="3_yqray"]
+[ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://protov1/player.tscn" id="4_qld7m"]
+[ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://protov1/display_layer.tscn" id="5_xgf7v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gnoy4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -18,8 +18,6 @@ background_mode = 2
 sky = SubResource("Sky_6vptj")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_7rv6a"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -55,9 +53,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3376465, 8.149372, -31.376
 use_collision = true
 size = Vector3(19.675293, 2.7436523, 1)
 
-[node name="blockbench_export" parent="Terrain" instance=ExtResource("3_7ncgk")]
+[node name="blockbench_export" parent="Terrain" instance=ExtResource("1_b6wvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.928814, 3.523172, -20.754822)
-script = ExtResource("2_gnoy4")
+script = ExtResource("2_tl4rv")
 target_layer = 1
 
 [node name="head" parent="Terrain/blockbench_export/Node/godot/head2" index="0"]
@@ -78,7 +76,7 @@ layers = 512
 [node name="leg R" parent="Terrain/blockbench_export/Node/godot/leg_R" index="0"]
 layers = 512
 
-[node name="Sketchfab_Scene" parent="Terrain" instance=ExtResource("2_76l1q")]
+[node name="Sketchfab_Scene" parent="Terrain" instance=ExtResource("3_yqray")]
 transform = Transform3D(0.1, 0, 0, 0, 0.09999998, 0, 0, 0, 0.1, -11.042122, 0.53872347, -29.08963)
 
 [node name="Material2" parent="Terrain/Sketchfab_Scene/Sketchfab_model/Collada visual scene group" index="0"]
@@ -125,7 +123,7 @@ transform = Transform3D(-0.0005585849, 0, -0.9999998, 0, 1, 0, 0.9999998, 0, -0.
 use_collision = true
 size = Vector3(128.55765, 12.739136, 1)
 
-[node name="Player" parent="." instance=ExtResource("1_7rv6a")]
+[node name="Player" parent="." instance=ExtResource("4_qld7m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4511006, 0)
 
 [node name="ShitPort" parent="Player" index="2"]
@@ -135,29 +133,7 @@ size = Vector2i(80, 45)
 cull_mask = 1048063
 fov = 50.5
 
-[node name="DisplayLayer" type="CanvasLayer" parent="."]
-script = ExtResource("2_6gfq0")
-
-[node name="Low-Res Display" type="TextureRect" parent="DisplayLayer"]
-texture_filter = 2
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("ViewportTexture_7rv6a")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="High-Res Display" type="TextureRect" parent="DisplayLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -417.0
-offset_bottom = 222.0
-grow_horizontal = 0
-expand_mode = 1
-stretch_mode = 4
+[node name="DisplayLayer" parent="." instance=ExtResource("5_xgf7v")]
 
 [editable path="Terrain/blockbench_export"]
 [editable path="Terrain/Sketchfab_Scene"]

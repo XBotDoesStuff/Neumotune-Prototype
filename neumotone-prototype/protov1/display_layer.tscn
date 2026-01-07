@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgtq0gi58lvwn"]
+
+[ext_resource type="Script" uid="uid://bgcnqf48jx6n4" path="res://protov1/display_layer.gd" id="1_tgyq4"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7rv6a"]
+
+[node name="DisplayLayer" type="CanvasLayer"]
+script = ExtResource("1_tgyq4")
+
+[node name="Low-Res Display" type="TextureRect" parent="."]
+texture_filter = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_7rv6a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="High-Res Display" type="TextureRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -417.0
+offset_bottom = 222.0
+grow_horizontal = 0
+expand_mode = 1
+stretch_mode = 4
