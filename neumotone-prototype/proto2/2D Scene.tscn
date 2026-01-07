@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://protov1/player.tscn" id="1_5kiji"]
 [ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://protov1/display_layer.tscn" id="2_uox3s"]
-[ext_resource type="PackedScene" uid="uid://clybb5e66q0po" path="res://proto2/parking_lot/scene.gltf" id="3_kdfwx"]
+[ext_resource type="PackedScene" uid="uid://dt8j6o0runbwo" path="res://proto2/parking_lot/parkingless.tscn" id="3_cow8t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0lqy"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,9 +31,6 @@ transform = Transform3D(1.0038751, 0, 0, 0, 1.0038751, 0, 0, 0, 1.0038751, 0, 5.
 
 [node name="DisplayLayer" parent="." instance=ExtResource("2_uox3s")]
 
-[node name="parkinglot" parent="." instance=ExtResource("3_kdfwx")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.8924518, -1.0970006, 3.673193)
-
 [node name="Node" type="Node" parent="."]
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Node"]
@@ -59,3 +56,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.804565, 2.5581665, 3.5429
 layers = 0
 use_collision = true
 size = Vector3(1.4165039, 6.116333, 35.4375)
+
+[node name="parkingless" parent="." instance=ExtResource("3_cow8t")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.7691898, -1.0562078, 3.6119652)
