@@ -15,6 +15,10 @@ run/main_scene="uid://bx50r2rkq4ir7"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://protov1/icon.svg"
 
+[autoload]
+
+GlobalManager="*res://Scripts/global_manager.gd"
+
 [input]
 
 left={

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Keycard
+* source:	https://sketchfab.com/3d-models/keycard-a0033bf027364417a7777d98d03980e1
+* author:	nuFF3 (https://sketchfab.com/nuff3)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Keycard" (https://sketchfab.com/3d-models/keycard-a0033bf027364417a7777d98d03980e1) by nuFF3 (https://sketchfab.com/nuff3) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
