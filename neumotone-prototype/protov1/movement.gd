@@ -10,6 +10,7 @@ var snapshot_texture : Texture
 
 var inventroy = []
 
+@onready var interaction_cast: RayCast3D = $Camera3D/InteractionCast
 @onready var player_cam: Camera3D = $Camera3D
 @onready var shitport_cam: Camera3D = $"ShitPort/Camera3D"
 @onready var shit_port: SubViewport = $ShitPort
@@ -32,6 +33,9 @@ func _process(_delta):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if Input.is_action_just_pressed("primary_action"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	if interaction_cast.is_colliding():
+		print("The raycast hit something lmao")
 
 
 func _physics_process(delta):
