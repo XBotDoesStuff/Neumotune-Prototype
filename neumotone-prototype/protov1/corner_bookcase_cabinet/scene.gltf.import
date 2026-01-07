@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cp84hei6jeo37"
-path="res://.godot/imported/model.gltf-00272ad4393555717b69e69de98a5362.scn"
+uid="uid://cr0ybpr1nxgeu"
+path="res://.godot/imported/scene.gltf-8006361831e6bbd445e62a6f5d672b45.scn"
 
 [deps]
 
-source_file="res://model.gltf"
-dest_files=["res://.godot/imported/model.gltf-00272ad4393555717b69e69de98a5362.scn"]
+source_file="res://protov1/corner_bookcase_cabinet/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-8006361831e6bbd445e62a6f5d672b45.scn"]
 
 [params]
 

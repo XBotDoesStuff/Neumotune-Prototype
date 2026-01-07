@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cia0vrqwl8q4j"
-path.s3tc="res://.godot/imported/Metal07-basecolor_baseColor.jpeg-ea91faf57b93c88a6e87a1e4799e4fce.s3tc.ctex"
+uid="uid://bl7gusnlvlfmc"
+path.s3tc="res://.godot/imported/Metal07-basecolor_metallicRoughness.png-25fa71e59ff31406463e13795fdc28fc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://corner_bookcase_cabinet/textures/Metal07-basecolor_baseColor.jpeg"
-dest_files=["res://.godot/imported/Metal07-basecolor_baseColor.jpeg-ea91faf57b93c88a6e87a1e4799e4fce.s3tc.ctex"]
+source_file="res://protov1/corner_bookcase_cabinet/textures/Metal07-basecolor_metallicRoughness.png"
+dest_files=["res://.godot/imported/Metal07-basecolor_metallicRoughness.png-25fa71e59ff31406463e13795fdc28fc.s3tc.ctex"]
 
 [params]
 

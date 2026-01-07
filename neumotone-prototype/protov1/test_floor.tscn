@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://bx50r2rkq4ir7"]
 
-[ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://player.tscn" id="1_7rv6a"]
-[ext_resource type="Script" uid="uid://bgcnqf48jx6n4" path="res://display_layer.gd" id="2_6gfq0"]
-[ext_resource type="PackedScene" uid="uid://cr0ybpr1nxgeu" path="res://corner_bookcase_cabinet/scene.gltf" id="2_76l1q"]
+[ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://protov1/player.tscn" id="1_7rv6a"]
+[ext_resource type="Script" uid="uid://bgcnqf48jx6n4" path="res://protov1/display_layer.gd" id="2_6gfq0"]
+[ext_resource type="PackedScene" uid="uid://cr0ybpr1nxgeu" path="res://protov1/corner_bookcase_cabinet/scene.gltf" id="2_76l1q"]
 [ext_resource type="Script" uid="uid://b3rwr8k0wlqq0" path="res://swap_mesh_layers.gd" id="2_gnoy4"]
-[ext_resource type="PackedScene" uid="uid://cp84hei6jeo37" path="res://model.gltf" id="3_7ncgk"]
+[ext_resource type="PackedScene" uid="uid://cp84hei6jeo37" path="res://protov1/model.gltf" id="3_7ncgk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gnoy4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

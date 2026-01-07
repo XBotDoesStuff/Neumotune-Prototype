@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n8qka8c7mkdc"
-path.s3tc="res://.godot/imported/Books_baseColor.jpeg-4bd54a347b3f99e8987088d257a87f24.s3tc.ctex"
+uid="uid://b72ljwdl6h6vp"
+path.s3tc="res://.godot/imported/Wood03-basecolor_metallicRoughness.png-58a312127d90b121b8e5ec153c78d217.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://corner_bookcase_cabinet/textures/Books_baseColor.jpeg"
-dest_files=["res://.godot/imported/Books_baseColor.jpeg-4bd54a347b3f99e8987088d257a87f24.s3tc.ctex"]
+source_file="res://protov1/corner_bookcase_cabinet/textures/Wood03-basecolor_metallicRoughness.png"
+dest_files=["res://.godot/imported/Wood03-basecolor_metallicRoughness.png-58a312127d90b121b8e5ec153c78d217.s3tc.ctex"]
 
 [params]
 
