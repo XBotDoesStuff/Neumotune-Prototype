@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dls3khprgoy0h"]
+[gd_scene load_steps=8 format=3 uid="uid://dls3khprgoy0h"]
 
 [ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://protov1/player.tscn" id="1_5kiji"]
 [ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://protov1/display_layer.tscn" id="2_uox3s"]
 [ext_resource type="PackedScene" uid="uid://dt8j6o0runbwo" path="res://proto2/parking_lot/parkingless.tscn" id="3_cow8t"]
+[ext_resource type="PackedScene" uid="uid://vdfpe0qd6nuk" path="res://proto2/modular_door_07/scene.gltf" id="4_5fu37"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0lqy"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -57,5 +58,32 @@ layers = 0
 use_collision = true
 size = Vector3(1.4165039, 6.116333, 35.4375)
 
+[node name="CSGBox3D4" type="CSGBox3D" parent="Node"]
+transform = Transform3D(-0.0012217313, 0, -1, 0, 1, 0, 1, 0, -0.0012217313, 32.47327, 2.2076652, -6.5832376)
+layers = 0
+use_collision = true
+size = Vector3(13.637939, 6.8482666, 0.7508545)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Node"]
+transform = Transform3D(-0.0012217313, 0, -1, 0, 1, 0, 1, 0, -0.0012217313, 32.469585, 2.7101066, 12.477981)
+layers = 0
+use_collision = true
+size = Vector3(19.67041, 7.8531494, 0.7508545)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Node"]
+transform = Transform3D(-0.0012217313, 0, -1, 0, 1, 0, 1, 0, -0.0012217313, 32.469585, 4.2899103, 1.652648)
+layers = 0
+use_collision = true
+size = Vector3(19.67041, 4.40802, 0.7508545)
+
 [node name="parkingless" parent="." instance=ExtResource("3_cow8t")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.7691898, -1.0562078, 3.6119652)
+
+[node name="door" parent="." instance=ExtResource("4_5fu37")]
+transform = Transform3D(-0.0012217002, 0, -0.9999992, 0, 1, 0, 0.9999992, 0, -0.0012217002, 32.340977, -1.2061546, -0.6342497)
+
+[node name="DORINTERACABL" type="CSGBox3D" parent="door"]
+transform = Transform3D(1.0000008, 0, -2.9453076e-08, 0, 1, 0, 2.9453076e-08, 0, 1.0000008, 2.0879257, 1.7175664, -0.44171524)
+layers = 0
+use_collision = true
+size = Vector3(2.5810242, 3.3797607, 0.42297363)

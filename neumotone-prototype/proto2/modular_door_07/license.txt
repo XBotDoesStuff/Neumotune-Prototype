@@ -1,0 +1,8 @@
+Model Information:
+* title:	Modular Door 07
+* source:	https://sketchfab.com/3d-models/modular-door-07-f4f1635e37344830a53ecaef3766e191
+* author:	Prince Obrymec (https://sketchfab.com/prince-obrymec)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
