@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c02vow54jwycp"]
+[gd_scene load_steps=8 format=3 uid="uid://c02vow54jwycp"]
 
 [ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://protov1/player.tscn" id="1_xqb60"]
 [ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://protov1/display_layer.tscn" id="2_0bghx"]
 [ext_resource type="PackedScene" uid="uid://q7yu2l0nvmsy" path="res://protov1/office_desk___6mb/scene.gltf" id="3_0bghx"]
-[ext_resource type="PackedScene" uid="uid://jlidl14s805w" path="res://protov1/keycard/scene.gltf" id="4_synf7"]
-[ext_resource type="Script" uid="uid://blxmxwe85tpun" path="res://Scripts/keycard.gd" id="5_0ehdq"]
+[ext_resource type="PackedScene" uid="uid://bqjarto0bsj5" path="res://protov1/cool_keycard.tscn" id="4_synf7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_synf7"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -58,6 +57,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.665243, 0)
 [node name="Desk" parent="Models" instance=ExtResource("3_0bghx")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.90975, 0.5, 2.856186)
 
-[node name="Keycard" parent="Models" instance=ExtResource("4_synf7")]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 9.190083, 1.4796956, 3.4998853)
-script = ExtResource("5_0ehdq")
+[node name="TotallyKeycard" type="CSGBox3D" parent="Models"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.615448, 1.4053385, 0)
+use_collision = true
+
+[node name="CoolKeycard" parent="Models" instance=ExtResource("4_synf7")]

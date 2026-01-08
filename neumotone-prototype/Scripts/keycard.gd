@@ -6,8 +6,6 @@ enum ACCESS_LEVEL {
 	adminsistrator
 }
 @export var keycard_level : ACCESS_LEVEL
-signal give_keycard(keycard_level)
 
 func interact():
-	give_keycard.emit(keycard_level)
 	queue_free()

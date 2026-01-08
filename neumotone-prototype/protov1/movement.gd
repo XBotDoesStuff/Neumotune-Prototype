@@ -35,7 +35,11 @@ func _process(_delta):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	if interaction_cast.is_colliding():
-		print("The raycast hit something lmao")
+		var collision_object = interaction_cast.get_collider()
+		print(collision_object)
+		print(collision_object is Interactable)
+		if collision_object is Interactable and Input.is_action_just_pressed("interact"):
+			collision_object.interact()
 
 
 func _physics_process(delta):
