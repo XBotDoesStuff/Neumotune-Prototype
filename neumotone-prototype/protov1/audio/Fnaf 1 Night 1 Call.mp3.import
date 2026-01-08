@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bs1tao8onbqn4"
+path="res://.godot/imported/Fnaf 1 Night 1 Call.mp3-9377cb0bc461f1620fde9097b0bc8ce0.mp3str"
+
+[deps]
+
+source_file="res://protov1/audio/Fnaf 1 Night 1 Call.mp3"
+dest_files=["res://.godot/imported/Fnaf 1 Night 1 Call.mp3-9377cb0bc461f1620fde9097b0bc8ce0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
