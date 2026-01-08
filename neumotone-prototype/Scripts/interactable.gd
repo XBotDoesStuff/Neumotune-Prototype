@@ -1,4 +1,4 @@
 @abstract class_name Interactable 
-extends Node
+extends Node3D
 
 @abstract func interact()
