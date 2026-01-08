@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://btvlncow3tofu"]
+
+[ext_resource type="PackedScene" uid="uid://dpvj6mryn14p" path="res://game_ready_light/scene.gltf" id="1_x4uu5"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_x4uu5")]
+
+[node name="SM_Light_Base_0" parent="Sketchfab_model/a20fe8ba90e2452fb0227db8af599924_fbx/RootNode/SM_Light" index="0"]
+gi_mode = 2
+gi_lightmap_texel_scale = 3.7157
