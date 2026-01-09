@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bqjarto0bsj5" path="res://protov1/cool_keycard.tscn" id="4_synf7"]
 [ext_resource type="Script" uid="uid://bobedx812wn4d" path="res://Scripts/door.gd" id="5_0ehdq"]
 [ext_resource type="Script" uid="uid://1gjt825wktpu" path="res://Scripts/audio_interactable.gd" id="6_64mgr"]
-[ext_resource type="ArrayMesh" uid="uid://qdhb8k6w2r1d" path="res://protov1/model meshes/office_phone.res" id="6_c02y6"]
+[ext_resource type="ArrayMesh" uid="uid://j5s5v5o50cwq" path="res://protov1/model meshes/office_phone.res" id="6_c02y6"]
 [ext_resource type="AudioStream" uid="uid://bs1tao8onbqn4" path="res://protov1/audio/Fnaf 1 Night 1 Call.mp3" id="7_ip14w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_synf7"]

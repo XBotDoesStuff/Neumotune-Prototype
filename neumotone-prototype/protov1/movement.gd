@@ -2,9 +2,13 @@ class_name Player
 extends CharacterBody3D
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-var speed = 10
+@export var speed = 5
+@export var sprint_speed = 10
 var jump_speed = 15
 var mouse_sensitivity = 0.002
+
+@export var max_stamina = 100
+var stamina = max_stamina
 
 var snapshot_texture : Texture
 
@@ -36,8 +40,6 @@ func _process(_delta):
 	
 	if interaction_cast.is_colliding():
 		var collision_object = interaction_cast.get_collider()
-		print(collision_object)
-		print(collision_object is Interactable)
 		if collision_object is Interactable and Input.is_action_just_pressed("interact"):
 			collision_object.interact()
 
@@ -46,8 +48,13 @@ func _physics_process(delta):
 	velocity.y += -gravity * delta
 	var input = Input.get_vector("left", "right", "forward", "back")
 	var movement_dir = transform.basis * Vector3(input.x, 0, input.y)
-	velocity.x = movement_dir.x * speed
-	velocity.z = movement_dir.z * speed
+	
+	if Input.is_action_pressed("sprint"):
+		velocity.x = movement_dir.x * sprint_speed
+		velocity.z = movement_dir.z * sprint_speed
+	else:
+		velocity.x = movement_dir.x * speed
+		velocity.z = movement_dir.z * speed
 
 	move_and_slide()
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
