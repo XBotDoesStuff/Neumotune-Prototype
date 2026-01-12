@@ -13,6 +13,8 @@ func _ready():
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("primary_action"):
 		snap()
+	
+	$Label.text = str(GlobalManager.player.shit_port.size)
 
 func snap():
 	high_res_display.texture = await player.take_snapshot()

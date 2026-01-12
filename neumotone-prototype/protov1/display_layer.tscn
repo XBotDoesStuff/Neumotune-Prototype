@@ -27,3 +27,7 @@ offset_bottom = 222.0
 grow_horizontal = 0
 expand_mode = 1
 stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+offset_right = 284.0
+offset_bottom = 103.0

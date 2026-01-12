@@ -10,7 +10,13 @@ var mouse_sensitivity = 0.002
 @export var max_stamina = 100
 var stamina = max_stamina
 
+@export_category("Viewport Settings")
 var snapshot_texture : Texture
+@export var shitport_max_width : int = 256
+@export var shitport_max_height : int = 144
+var shitport_degradation : float = 1
+@export var max_degradation : float = 0.1
+@export var deg_decrease = 0.9
 
 var inventroy = []
 
@@ -26,6 +32,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	player_cam.current = false
 	GlobalManager.player = self
+	shit_port.size = Vector2i(shitport_max_width, shitport_max_height)
 
 func _process(_delta):
 	if shitport_cam:
@@ -70,4 +77,9 @@ func take_snapshot():
 	good_port.render_target_update_mode = SubViewport.UPDATE_ONCE
 	await RenderingServer.frame_post_draw
 	snapshot_texture = good_port.get_texture()
+	set_shitport_degradation(shitport_degradation * deg_decrease)
 	return snapshot_texture
+
+func set_shitport_degradation(degradation : float):
+	shitport_degradation = clamp(degradation, max_degradation, 1)
+	shit_port.size = Vector2i(floor(shitport_max_width * shitport_degradation), floor(shitport_max_height * shitport_degradation))
