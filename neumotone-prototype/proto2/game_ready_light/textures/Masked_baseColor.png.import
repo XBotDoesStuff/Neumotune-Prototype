@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crliu4ptoephu"
-path.s3tc="res://.godot/imported/Base_baseColor.png-c91f2749f71e276bf8ad03b651e7490a.s3tc.ctex"
+uid="uid://bie01prwjjwjx"
+path.s3tc="res://.godot/imported/Masked_baseColor.png-6c9cb0a9dac36da8a1958f3b45826a37.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://game_ready_light/textures/Base_baseColor.png"
-dest_files=["res://.godot/imported/Base_baseColor.png-c91f2749f71e276bf8ad03b651e7490a.s3tc.ctex"]
+source_file="res://proto2/game_ready_light/textures/Masked_baseColor.png"
+dest_files=["res://.godot/imported/Masked_baseColor.png-6c9cb0a9dac36da8a1958f3b45826a37.s3tc.ctex"]
 
 [params]
 
