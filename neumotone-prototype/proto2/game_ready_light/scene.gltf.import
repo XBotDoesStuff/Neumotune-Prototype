@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dpvj6mryn14p"
-path="res://.godot/imported/scene.gltf-d07663ce871646333f21f75489462b18.scn"
+path="res://.godot/imported/scene.gltf-17896d8e5608d3779d875122b3239721.scn"
 
 [deps]
 
-source_file="res://game_ready_light/scene.gltf"
-dest_files=["res://.godot/imported/scene.gltf-d07663ce871646333f21f75489462b18.scn"]
+source_file="res://proto2/game_ready_light/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-17896d8e5608d3779d875122b3239721.scn"]
 
 [params]
 

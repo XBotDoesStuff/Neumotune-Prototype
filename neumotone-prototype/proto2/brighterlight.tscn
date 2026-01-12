@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://btvlncow3tofu"]
 
-[ext_resource type="PackedScene" uid="uid://dpvj6mryn14p" path="res://game_ready_light/scene.gltf" id="1_x4uu5"]
+[ext_resource type="PackedScene" uid="uid://dpvj6mryn14p" path="res://proto2/game_ready_light/scene.gltf" id="1_x4uu5"]
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_x4uu5")]
 
