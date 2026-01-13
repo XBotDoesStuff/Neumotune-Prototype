@@ -17,6 +17,10 @@ var snapshot_texture : Texture
 var shitport_degradation : float = 1
 @export var max_degradation : float = 0.1
 @export var deg_decrease = 0.9
+@export var evil_deg_decrease = 0.5
+
+@export var max_snaps_after_limit : int = 3
+var break_value : int = 0
 
 var inventroy = []
 
@@ -74,10 +78,27 @@ func _input(event):
 		$Camera3D.rotation.x = clampf($Camera3D.rotation.x, -deg_to_rad(70), deg_to_rad(70))
 
 func take_snapshot():
+	var evil_sphere_visible: bool = false
 	good_port.render_target_update_mode = SubViewport.UPDATE_ONCE
 	await RenderingServer.frame_post_draw
 	snapshot_texture = good_port.get_texture()
-	set_shitport_degradation(shitport_degradation * deg_decrease)
+	
+	for sphere in get_tree().get_nodes_in_group("evil_spheres"):
+		if sphere.currently_visible:
+			evil_sphere_visible = true
+			break
+	
+	if evil_sphere_visible:
+		set_shitport_degradation(shitport_degradation * evil_deg_decrease)
+	else:
+		set_shitport_degradation(shitport_degradation * deg_decrease)
+	
+	if shitport_degradation == max_degradation:
+		break_value += 1
+	
+	if break_value >= max_snaps_after_limit:
+		GlobalManager.display.set_display_broken(true)
+	
 	return snapshot_texture
 
 func set_shitport_degradation(degradation : float):

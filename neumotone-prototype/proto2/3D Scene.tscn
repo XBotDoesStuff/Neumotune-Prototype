@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://xodwx1lcfsl8"]
 
-[ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://protov1/player.tscn" id="1_emg8t"]
+[ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://Scenes/player.tscn" id="1_emg8t"]
 [ext_resource type="PackedScene" uid="uid://tbtiv1e5t7kd" path="res://proto2/reception_desk/scene.gltf" id="2_vh8wp"]
 [ext_resource type="PackedScene" uid="uid://cyocx1kv0vu8k" path="res://proto2/corridor_hotel/scene.gltf" id="3_mmxwg"]
-[ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://protov1/display_layer.tscn" id="4_lnrmj"]
+[ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://Scenes/display_layer.tscn" id="4_lnrmj"]
 [ext_resource type="PackedScene" uid="uid://btvlncow3tofu" path="res://proto2/brighterlight.tscn" id="6_ovhkj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4hup3"]

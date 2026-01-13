@@ -7,3 +7,5 @@ enum ACCESS_LEVEL {
 
 var player : Player
 var player_access_level : ACCESS_LEVEL = ACCESS_LEVEL.maintenance
+
+var display : PlayerDisplay
