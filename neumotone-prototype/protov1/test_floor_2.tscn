@@ -1,15 +1,15 @@
-[gd_scene load_steps=19 format=4 uid="uid://c02vow54jwycp"]
+[gd_scene load_steps=18 format=4 uid="uid://c02vow54jwycp"]
 
-[ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://protov1/player.tscn" id="1_xqb60"]
-[ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://protov1/display_layer.tscn" id="2_0bghx"]
+[ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://Scenes/player.tscn" id="1_xqb60"]
+[ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://Scenes/display_layer.tscn" id="2_0bghx"]
 [ext_resource type="PackedScene" uid="uid://q7yu2l0nvmsy" path="res://protov1/office_desk___6mb/scene.gltf" id="3_0bghx"]
 [ext_resource type="PackedScene" uid="uid://bqjarto0bsj5" path="res://protov1/cool_keycard.tscn" id="4_synf7"]
+[ext_resource type="Script" uid="uid://bn8tlqk4c40dr" path="res://protov1/visible_on_screen_notifier_3d_test.gd" id="4_tunce"]
 [ext_resource type="Script" uid="uid://bobedx812wn4d" path="res://Scripts/door.gd" id="5_0ehdq"]
 [ext_resource type="Script" uid="uid://1gjt825wktpu" path="res://Scripts/audio_interactable.gd" id="6_64mgr"]
 [ext_resource type="ArrayMesh" uid="uid://j5s5v5o50cwq" path="res://protov1/model meshes/office_phone.res" id="6_c02y6"]
 [ext_resource type="AudioStream" uid="uid://bs1tao8onbqn4" path="res://protov1/audio/Fnaf 1 Night 1 Call.mp3" id="7_ip14w"]
 [ext_resource type="Script" uid="uid://j8fo3ttnkboa" path="res://Scripts/fuse.gd" id="9_cnf0r"]
-[ext_resource type="Shader" uid="uid://cubbyqsqbhuai" path="res://protov1/other_shader.tres" id="10_tunce"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_synf7"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,10 +29,6 @@ data = PackedVector3Array(3.6827998, 2.7082999, 3.3339999, 6.1137, 2.1543, 3.431
 
 [sub_resource type="BoxMesh" id="BoxMesh_cnf0r"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tunce"]
-render_priority = 0
-shader = ExtResource("10_tunce")
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_i45xq"]
 _surfaces = [{
 "aabb": AABB(-0.5288675, -0.5288675, -0.5288675, 1.057735, 1.057735, 1.057735),
@@ -40,7 +36,6 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 36,
 "index_data": PackedByteArray("AAAEAAIAAgAEAAYAAQAFAAMAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAAUABIAEgAUABYAEQAVABMAEwAVABcA"),
-"material": SubResource("ShaderMaterial_tunce"),
 "name": "outline_shader",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -90,6 +85,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.665243, 0)
 [node name="Desk" parent="Models" instance=ExtResource("3_0bghx")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.90975, 0.5, 2.856186)
 
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Models"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.615448, 1.4053385, 0)
+layers = 256
+radius = 0.5876797
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Models/CSGSphere3D"]
+aabb = AABB(-0.54403067, -0.48733082, -0.51719475, 1.0880613, 0.97466165, 1.0343895)
+script = ExtResource("4_tunce")
+
 [node name="TotallyKeycard" type="CSGBox3D" parent="Models"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.615448, 1.4053385, 0)
 layers = 512
@@ -97,11 +101,6 @@ use_collision = true
 
 [node name="CoolKeycard" parent="Models" instance=ExtResource("4_synf7")]
 keycard_level = 1
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Models"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.615448, 1.4053385, 0)
-layers = 256
-radius = 0.5876797
 
 [node name="Door" type="Marker3D" parent="Models"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.73085, 4.2058296, 0)
@@ -146,3 +145,6 @@ mesh = SubResource("ArrayMesh_i45xq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Models/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tunce")
+
+[connection signal="screen_entered" from="Models/CSGSphere3D/VisibleOnScreenNotifier3D" to="Models/CSGSphere3D/VisibleOnScreenNotifier3D" method="_on_screen_entered"]
+[connection signal="screen_exited" from="Models/CSGSphere3D/VisibleOnScreenNotifier3D" to="Models/CSGSphere3D/VisibleOnScreenNotifier3D" method="_on_screen_exited"]

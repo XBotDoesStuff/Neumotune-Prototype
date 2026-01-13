@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dgtq0gi58lvwn"]
 
-[ext_resource type="Script" uid="uid://bgcnqf48jx6n4" path="res://protov1/display_layer.gd" id="1_tgyq4"]
+[ext_resource type="Script" uid="uid://bgcnqf48jx6n4" path="res://Scripts/display_layer.gd" id="1_tgyq4"]
 [ext_resource type="Texture2D" uid="uid://dj2r4bgh0yxrv" path="res://proto2/game_ready_light/testhelmt.png" id="2_k1ue5"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_7rv6a"]
@@ -34,6 +34,13 @@ grow_horizontal = 0
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="."]
-offset_right = 284.0
-offset_bottom = 103.0
+[node name="DebugContainer" type="BoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+vertical = true
+
+[node name="DisplaySize" type="Label" parent="DebugContainer"]
+layout_mode = 2
+
+[node name="SnapLimit" type="Label" parent="DebugContainer"]
+layout_mode = 2

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dls3khprgoy0h"]
 
-[ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://protov1/player.tscn" id="1_5kiji"]
-[ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://protov1/display_layer.tscn" id="2_uox3s"]
+[ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://Scenes/player.tscn" id="1_5kiji"]
+[ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://Scenes/display_layer.tscn" id="2_uox3s"]
 [ext_resource type="PackedScene" uid="uid://dt8j6o0runbwo" path="res://proto2/parking_lot/parkingless.tscn" id="3_cow8t"]
 [ext_resource type="PackedScene" uid="uid://vdfpe0qd6nuk" path="res://proto2/modular_door_07/scene.gltf" id="4_5fu37"]
 
