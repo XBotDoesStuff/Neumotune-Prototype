@@ -1,0 +1,1329 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3smwew60leci"]
+
+[ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://Scenes/player.tscn" id="1_66bqc"]
+[ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://Scenes/display_layer.tscn" id="2_2e4xm"]
+[ext_resource type="PackedScene" uid="uid://35s82c31x8yq" path="res://proto2/empty_cubical/scene.gltf" id="3_2e4xm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_66bqc"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_6rpph"]
+sky_material = SubResource("ProceduralSkyMaterial_66bqc")
+
+[sub_resource type="Environment" id="Environment_2e4xm"]
+background_mode = 2
+sky = SubResource("Sky_6rpph")
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.123
+volumetric_fog_albedo = Color(0.9622794, 0.82029456, 0.8325688, 1)
+volumetric_fog_temporal_reprojection_enabled = false
+
+[node name="4dScene" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_66bqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4538027, 0.57105035, 0.39112806)
+
+[node name="DisplayLayer" parent="." instance=ExtResource("2_2e4xm")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="DirectionalLight3D"]
+environment = SubResource("Environment_2e4xm")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6004658, -0.02722168, -17.650494)
+use_collision = true
+size = Vector3(18.561722, 0.1706543, 37.018997)
+
+[node name="chode3d" type="Node3D" parent="."]
+
+[node name="Sketchfab_Scene2" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -6.6610255)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene2" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene2/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, -3.758625)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene3" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -5.0765796)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene3" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene3/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene4" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, -2.174179)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene4/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene4/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene5" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -3.4772916)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene5" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene5/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene6" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, -0.5748911)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene6/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene6/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene7" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -1.8928456)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene7" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene7/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene8" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, 1.0095549)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene8/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene8/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene9" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -13.0473)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene9" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene9/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene10" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, -10.1449)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene10/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene10/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene11" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -11.462854)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene11" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene11/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene12" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, -8.560454)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene12/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene12/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene13" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -9.863567)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene13" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene13/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene14" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, -6.9611664)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene14/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene14/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene15" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -8.279121)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene15" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene15/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene16" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, -5.3767204)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene16/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene16/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene17" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -6.6610255)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene17" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene17/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene18" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, -3.758625)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene18/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene18/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene19" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -5.0765796)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene19" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene19/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene20" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, -2.174179)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene20/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene20/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene21" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -3.4772916)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene21" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene21/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene22" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, -0.5748911)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene22/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene22/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene23" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -1.8928456)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene23" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene23/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene24" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, 1.0095549)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene24/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene24/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene25" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -13.0473)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene25" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene25/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene26" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, -10.1449)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene26/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene26/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene27" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -11.462854)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene27" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene27/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene28" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, -8.560454)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene28/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene28/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene29" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -9.863567)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene29" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene29/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene30" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, -6.9611664)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene30/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene30/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene31" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -8.279121)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene31" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene31/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene32" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, -5.3767204)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene32/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene32/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene33" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -6.699052)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene33" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene33/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene34" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, -3.7966516)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene34/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene34/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene35" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -5.114606)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene35" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene35/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene36" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, -2.2122056)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene36/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene36/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene37" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -3.5153182)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene37" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene37/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene38" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, -0.61291766)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene38/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene38/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene39" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -1.9308722)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene39" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene39/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene40" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, 0.9715283)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene40/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene40/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene41" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -13.085327)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene41" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene41/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene42" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, -10.182927)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene42/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene42/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene43" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -11.500881)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene43" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene43/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene44" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, -8.598481)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene44/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene44/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene45" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -9.901594)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene45" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene45/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene46" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, -6.999193)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene46/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene46/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene47" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -8.317148)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene47" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene47/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene48" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, -5.414747)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene48/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene48/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene49" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -6.699052)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene49" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene49/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene50" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, -3.7966516)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene50/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene50/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene51" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -5.114606)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene51" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene51/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene52" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, -2.2122056)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene52/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene52/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene53" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -3.5153182)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene53" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene53/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene54" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, -0.61291766)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene54/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene54/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene55" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -1.9308722)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene55" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene55/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene56" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, 0.9715283)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene56/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene56/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene57" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -13.085327)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene57" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene57/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene58" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, -10.182927)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene58/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene58/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene59" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -11.500881)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene59" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene59/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene60" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, -8.598481)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene60/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene60/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene61" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -9.901594)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene61" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene61/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene62" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, -6.999193)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene62/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene62/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene63" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -8.317148)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene63" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene63/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene64" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, -5.414747)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene64/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene64/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="chode3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6004658, -0.02722168, -30.426737)
+use_collision = true
+size = Vector3(18.561722, 0.1706543, 37.018997)
+
+[node name="Sketchfab_Scene65" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -19.437267)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene65" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene65/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene66" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, -16.534866)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene66/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene66/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene67" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -17.852821)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene67" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene67/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene68" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, -14.950421)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene68/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene68/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene69" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -16.253534)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene69" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene69/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene70" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, -13.351133)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene70/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene70/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene71" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -14.669088)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene71" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene71/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene72" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, -11.766687)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene72/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene72/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene73" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -25.823542)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene73" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene73/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene74" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, -22.921143)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene74/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene74/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene75" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -24.239096)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene75" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene75/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene76" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, -21.336697)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene76/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene76/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene77" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -22.63981)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene77" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene77/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene78" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, -19.73741)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene78/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene78/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene79" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.8975334, 0.101097584, -21.055365)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene79" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene79/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene80" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.7012205, 0.101097584, -18.152964)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene80/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene80/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene81" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -19.437267)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene81" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene81/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene82" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, -16.534866)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene82/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene82/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene83" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -17.852821)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene83" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene83/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene84" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, -14.950421)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene84/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene84/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene85" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -16.253534)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene85" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene85/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene86" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, -13.351133)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene86/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene86/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene87" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -14.669088)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene87" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene87/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene88" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, -11.766687)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene88/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene88/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene89" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -25.823542)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene89" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene89/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene90" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, -22.921143)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene90/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene90/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene91" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -24.239096)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene91" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene91/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene92" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, -21.336697)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene92/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene92/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene93" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -22.63981)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene93" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene93/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene94" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, -19.73741)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene94/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene94/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene95" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.925123, 0.101097584, -21.055365)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene95" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene95/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene96" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.728811, 0.101097584, -18.152964)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene96/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene96/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene97" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -19.475294)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene97" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene97/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene98" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, -16.572895)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene98/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene98/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene99" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -17.890848)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene99" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene99/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene100" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, -14.988448)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene100/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene100/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene101" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -16.291561)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene101" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene101/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene102" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, -13.38916)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene102/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene102/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene103" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -14.707114)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene103" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene103/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene104" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, -11.804714)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene104/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene104/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene105" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -25.86157)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene105" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene105/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene106" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, -22.95917)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene106/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene106/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene107" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -24.277124)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene107" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene107/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene108" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, -21.374723)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene108/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene108/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene109" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -22.677835)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene109" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene109/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene110" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, -19.775434)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene110/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene110/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene111" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.925922, 0.101097584, -21.09339)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene111" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene111/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene112" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.72961, 0.101097584, -18.190989)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene112/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene112/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene113" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -19.475294)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene113" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene113/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene114" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, -16.572895)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene114/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene114/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene115" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -17.890848)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene115" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene115/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene116" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, -14.988448)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene116/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene116/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene117" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -16.291561)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene117" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene117/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene118" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, -13.38916)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene118/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene118/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene119" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -14.707114)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene119" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene119/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene120" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, -11.804714)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene120/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene120/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene121" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -25.86157)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene121" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene121/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene122" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, -22.95917)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene122/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene122/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene123" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -24.277124)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene123" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene123/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene124" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, -21.374723)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene124/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene124/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[node name="Sketchfab_Scene125" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -22.677835)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene125" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene125/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 2.220446e-16, 4.2351647e-21, -2.2737368e-13, 0.99999976, -1.364242e-12, 1.6940659e-21, -1.3322676e-15, 1.0000002, -5.446251, 166.51584, -0.076235056)
+
+[node name="Sketchfab_Scene126" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, -19.775434)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene126/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene126/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.99999994, -1.110223e-16, -2.1175824e-22, 0, 0.99999976, -1.364242e-12, 2.1175824e-22, -1.110223e-16, 1, -5.334755, 138.06616, -0.027767122)
+
+[node name="Sketchfab_Scene127" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.953512, 0.101097584, -21.09339)
+
+[node name="Sketchfab_model" parent="chode3d/Sketchfab_Scene127" index="0"]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -14.47336, 0, -30.584686)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene127/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(1, 4.440892e-16, 5.9292306e-21, -3.410605e-13, 0.99999976, -1.8189894e-12, 2.5410988e-21, -2.220446e-15, 1.0000005, -5.4380436, 166.51585, -0.076235056)
+
+[node name="Sketchfab_Scene128" parent="chode3d" instance=ExtResource("3_2e4xm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.7572, 0.101097584, -18.190989)
+
+[node name="Cube_012" parent="chode3d/Sketchfab_Scene128/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode" index="0"]
+transform = Transform3D(-6.9938224e-06, 6.1306834, 7.649492e-06, 0, -2.6798068e-07, 175, 159.99998, 2.6798068e-07, 3.343699e-13, -3472.584, 158.94873, -418.73474)
+
+[node name="Cube_012_Material_013_0" parent="chode3d/Sketchfab_Scene128/Sketchfab_model/56dadf9fa8084ec7a7c188d7ebf7e532_fbx/RootNode/Cube_012" index="0"]
+transform = Transform3D(0.9999999, -2.220446e-16, -2.1175824e-22, 1.1368684e-13, 0.99999976, -1.364242e-12, 4.2351647e-22, -2.220446e-16, 1, -5.334755, 137.98392, -0.027767122)
+
+[editable path="chode3d/Sketchfab_Scene2"]
+[editable path="chode3d/Sketchfab_Scene"]
+[editable path="chode3d/Sketchfab_Scene3"]
+[editable path="chode3d/Sketchfab_Scene4"]
+[editable path="chode3d/Sketchfab_Scene5"]
+[editable path="chode3d/Sketchfab_Scene6"]
+[editable path="chode3d/Sketchfab_Scene7"]
+[editable path="chode3d/Sketchfab_Scene8"]
+[editable path="chode3d/Sketchfab_Scene9"]
+[editable path="chode3d/Sketchfab_Scene10"]
+[editable path="chode3d/Sketchfab_Scene11"]
+[editable path="chode3d/Sketchfab_Scene12"]
+[editable path="chode3d/Sketchfab_Scene13"]
+[editable path="chode3d/Sketchfab_Scene14"]
+[editable path="chode3d/Sketchfab_Scene15"]
+[editable path="chode3d/Sketchfab_Scene16"]
+[editable path="chode3d/Sketchfab_Scene17"]
+[editable path="chode3d/Sketchfab_Scene18"]
+[editable path="chode3d/Sketchfab_Scene19"]
+[editable path="chode3d/Sketchfab_Scene20"]
+[editable path="chode3d/Sketchfab_Scene21"]
+[editable path="chode3d/Sketchfab_Scene22"]
+[editable path="chode3d/Sketchfab_Scene23"]
+[editable path="chode3d/Sketchfab_Scene24"]
+[editable path="chode3d/Sketchfab_Scene25"]
+[editable path="chode3d/Sketchfab_Scene26"]
+[editable path="chode3d/Sketchfab_Scene27"]
+[editable path="chode3d/Sketchfab_Scene28"]
+[editable path="chode3d/Sketchfab_Scene29"]
+[editable path="chode3d/Sketchfab_Scene30"]
+[editable path="chode3d/Sketchfab_Scene31"]
+[editable path="chode3d/Sketchfab_Scene32"]
+[editable path="chode3d/Sketchfab_Scene33"]
+[editable path="chode3d/Sketchfab_Scene34"]
+[editable path="chode3d/Sketchfab_Scene35"]
+[editable path="chode3d/Sketchfab_Scene36"]
+[editable path="chode3d/Sketchfab_Scene37"]
+[editable path="chode3d/Sketchfab_Scene38"]
+[editable path="chode3d/Sketchfab_Scene39"]
+[editable path="chode3d/Sketchfab_Scene40"]
+[editable path="chode3d/Sketchfab_Scene41"]
+[editable path="chode3d/Sketchfab_Scene42"]
+[editable path="chode3d/Sketchfab_Scene43"]
+[editable path="chode3d/Sketchfab_Scene44"]
+[editable path="chode3d/Sketchfab_Scene45"]
+[editable path="chode3d/Sketchfab_Scene46"]
+[editable path="chode3d/Sketchfab_Scene47"]
+[editable path="chode3d/Sketchfab_Scene48"]
+[editable path="chode3d/Sketchfab_Scene49"]
+[editable path="chode3d/Sketchfab_Scene50"]
+[editable path="chode3d/Sketchfab_Scene51"]
+[editable path="chode3d/Sketchfab_Scene52"]
+[editable path="chode3d/Sketchfab_Scene53"]
+[editable path="chode3d/Sketchfab_Scene54"]
+[editable path="chode3d/Sketchfab_Scene55"]
+[editable path="chode3d/Sketchfab_Scene56"]
+[editable path="chode3d/Sketchfab_Scene57"]
+[editable path="chode3d/Sketchfab_Scene58"]
+[editable path="chode3d/Sketchfab_Scene59"]
+[editable path="chode3d/Sketchfab_Scene60"]
+[editable path="chode3d/Sketchfab_Scene61"]
+[editable path="chode3d/Sketchfab_Scene62"]
+[editable path="chode3d/Sketchfab_Scene63"]
+[editable path="chode3d/Sketchfab_Scene64"]
+[editable path="chode3d/Sketchfab_Scene65"]
+[editable path="chode3d/Sketchfab_Scene66"]
+[editable path="chode3d/Sketchfab_Scene67"]
+[editable path="chode3d/Sketchfab_Scene68"]
+[editable path="chode3d/Sketchfab_Scene69"]
+[editable path="chode3d/Sketchfab_Scene70"]
+[editable path="chode3d/Sketchfab_Scene71"]
+[editable path="chode3d/Sketchfab_Scene72"]
+[editable path="chode3d/Sketchfab_Scene73"]
+[editable path="chode3d/Sketchfab_Scene74"]
+[editable path="chode3d/Sketchfab_Scene75"]
+[editable path="chode3d/Sketchfab_Scene76"]
+[editable path="chode3d/Sketchfab_Scene77"]
+[editable path="chode3d/Sketchfab_Scene78"]
+[editable path="chode3d/Sketchfab_Scene79"]
+[editable path="chode3d/Sketchfab_Scene80"]
+[editable path="chode3d/Sketchfab_Scene81"]
+[editable path="chode3d/Sketchfab_Scene82"]
+[editable path="chode3d/Sketchfab_Scene83"]
+[editable path="chode3d/Sketchfab_Scene84"]
+[editable path="chode3d/Sketchfab_Scene85"]
+[editable path="chode3d/Sketchfab_Scene86"]
+[editable path="chode3d/Sketchfab_Scene87"]
+[editable path="chode3d/Sketchfab_Scene88"]
+[editable path="chode3d/Sketchfab_Scene89"]
+[editable path="chode3d/Sketchfab_Scene90"]
+[editable path="chode3d/Sketchfab_Scene91"]
+[editable path="chode3d/Sketchfab_Scene92"]
+[editable path="chode3d/Sketchfab_Scene93"]
+[editable path="chode3d/Sketchfab_Scene94"]
+[editable path="chode3d/Sketchfab_Scene95"]
+[editable path="chode3d/Sketchfab_Scene96"]
+[editable path="chode3d/Sketchfab_Scene97"]
+[editable path="chode3d/Sketchfab_Scene98"]
+[editable path="chode3d/Sketchfab_Scene99"]
+[editable path="chode3d/Sketchfab_Scene100"]
+[editable path="chode3d/Sketchfab_Scene101"]
+[editable path="chode3d/Sketchfab_Scene102"]
+[editable path="chode3d/Sketchfab_Scene103"]
+[editable path="chode3d/Sketchfab_Scene104"]
+[editable path="chode3d/Sketchfab_Scene105"]
+[editable path="chode3d/Sketchfab_Scene106"]
+[editable path="chode3d/Sketchfab_Scene107"]
+[editable path="chode3d/Sketchfab_Scene108"]
+[editable path="chode3d/Sketchfab_Scene109"]
+[editable path="chode3d/Sketchfab_Scene110"]
+[editable path="chode3d/Sketchfab_Scene111"]
+[editable path="chode3d/Sketchfab_Scene112"]
+[editable path="chode3d/Sketchfab_Scene113"]
+[editable path="chode3d/Sketchfab_Scene114"]
+[editable path="chode3d/Sketchfab_Scene115"]
+[editable path="chode3d/Sketchfab_Scene116"]
+[editable path="chode3d/Sketchfab_Scene117"]
+[editable path="chode3d/Sketchfab_Scene118"]
+[editable path="chode3d/Sketchfab_Scene119"]
+[editable path="chode3d/Sketchfab_Scene120"]
+[editable path="chode3d/Sketchfab_Scene121"]
+[editable path="chode3d/Sketchfab_Scene122"]
+[editable path="chode3d/Sketchfab_Scene123"]
+[editable path="chode3d/Sketchfab_Scene124"]
+[editable path="chode3d/Sketchfab_Scene125"]
+[editable path="chode3d/Sketchfab_Scene126"]
+[editable path="chode3d/Sketchfab_Scene127"]
+[editable path="chode3d/Sketchfab_Scene128"]
