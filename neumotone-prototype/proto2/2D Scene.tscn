@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dls3khprgoy0h"]
+[gd_scene load_steps=9 format=3 uid="uid://dls3khprgoy0h"]
 
 [ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://Scenes/player.tscn" id="1_5kiji"]
 [ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://Scenes/display_layer.tscn" id="2_uox3s"]
 [ext_resource type="PackedScene" uid="uid://dt8j6o0runbwo" path="res://proto2/parking_lot/parkingless.tscn" id="3_cow8t"]
 [ext_resource type="PackedScene" uid="uid://vdfpe0qd6nuk" path="res://proto2/modular_door_07/scene.gltf" id="4_5fu37"]
+[ext_resource type="Script" uid="uid://0f3ajrl4ce32" path="res://Scripts/Interactables/level_load_door.gd" id="5_qkhxf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0lqy"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -91,3 +92,5 @@ transform = Transform3D(1.0000008, 0, -2.9453076e-08, 0, 1, 0, 2.9453076e-08, 0,
 layers = 0
 use_collision = true
 size = Vector3(2.5810242, 3.3797607, 0.42297363)
+script = ExtResource("5_qkhxf")
+target_scene_path = "C:/Users/26siggaxanc_washk12/Documents/GitHub/Neumotune-Prototype/neumotone-prototype/proto2/3D Scene.tscn"

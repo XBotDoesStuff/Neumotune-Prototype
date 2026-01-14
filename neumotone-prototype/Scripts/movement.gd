@@ -9,6 +9,8 @@ var mouse_sensitivity = 0.002
 
 @export var max_stamina = 100
 var stamina = max_stamina
+@export var max_health : float = 100.0
+var health : float
 
 @export_category("Viewport Settings")
 var snapshot_texture : Texture

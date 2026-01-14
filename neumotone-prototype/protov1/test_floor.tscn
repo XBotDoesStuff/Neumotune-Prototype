@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cp84hei6jeo37" path="res://protov1/model.gltf" id="3_7ncgk"]
 [ext_resource type="PackedScene" uid="uid://q7yu2l0nvmsy" path="res://protov1/office_desk___6mb/scene.gltf" id="6_tl4rv"]
 [ext_resource type="PackedScene" uid="uid://jlidl14s805w" path="res://protov1/keycard/scene.gltf" id="7_yqray"]
-[ext_resource type="Script" uid="uid://blxmxwe85tpun" path="res://Scripts/keycard.gd" id="8_qld7m"]
+[ext_resource type="Script" uid="uid://blxmxwe85tpun" path="res://Scripts/Interactables/keycard.gd" id="8_qld7m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gnoy4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

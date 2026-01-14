@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://xodwx1lcfsl8"]
+[gd_scene load_steps=12 format=3 uid="uid://xodwx1lcfsl8"]
 
 [ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://Scenes/player.tscn" id="1_emg8t"]
 [ext_resource type="PackedScene" uid="uid://tbtiv1e5t7kd" path="res://proto2/reception_desk/scene.gltf" id="2_vh8wp"]
 [ext_resource type="PackedScene" uid="uid://cyocx1kv0vu8k" path="res://proto2/corridor_hotel/scene.gltf" id="3_mmxwg"]
 [ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://Scenes/display_layer.tscn" id="4_lnrmj"]
+[ext_resource type="PackedScene" uid="uid://bqjarto0bsj5" path="res://protov1/cool_keycard.tscn" id="6_63hsv"]
 [ext_resource type="PackedScene" uid="uid://btvlncow3tofu" path="res://proto2/brighterlight.tscn" id="6_ovhkj"]
+[ext_resource type="Script" uid="uid://bobedx812wn4d" path="res://Scripts/Interactables/door.gd" id="7_wia1q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4hup3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -22,6 +24,9 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.123
 volumetric_fog_albedo = Color(0.9622794, 0.82029456, 0.8325688, 1)
 volumetric_fog_temporal_reprojection_enabled = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x02sn"]
+albedo_color = Color(0.1764706, 0.9137255, 0.015686275, 1)
 
 [node name="3dScene" type="Node3D"]
 
@@ -93,3 +98,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.038086, 3.2089732, -8.040
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ovhkj")
+
+[node name="CoolKeycard" parent="." instance=ExtResource("6_63hsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.090528, -0.4309342, -13.730834)
+keycard_level = 1
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.555939, 1.6093657, -16.38333)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Marker3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9476109, -0.3232422, -0.028930664)
+use_collision = true
+size = Vector3(3.9399414, 4.279297, 0.31274414)
+material = SubResource("StandardMaterial3D_x02sn")
+script = ExtResource("7_wia1q")
+destroy_door = true
