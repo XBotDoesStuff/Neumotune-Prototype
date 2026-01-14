@@ -1,0 +1,11 @@
+Model Information:
+* title:	empty cubical
+* source:	https://sketchfab.com/3d-models/empty-cubical-c35e71f1ee30405d8804f95e913d08c3
+* author:	ChoboiAssets (https://sketchfab.com/alsoliman905)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "empty cubical" (https://sketchfab.com/3d-models/empty-cubical-c35e71f1ee30405d8804f95e913d08c3) by ChoboiAssets (https://sketchfab.com/alsoliman905) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

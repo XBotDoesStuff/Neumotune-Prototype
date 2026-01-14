@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dgtq0gi58lvwn"]
 
 [ext_resource type="Script" uid="uid://bgcnqf48jx6n4" path="res://Scripts/display_layer.gd" id="1_tgyq4"]
-[ext_resource type="Texture2D" uid="uid://dj2r4bgh0yxrv" path="res://proto2/game_ready_light/testhelmt.png" id="2_k1ue5"]
+[ext_resource type="Texture2D" uid="uid://dj2r4bgh0yxrv" path="res://proto2/testhelmt.png" id="2_k1ue5"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_7rv6a"]
 
