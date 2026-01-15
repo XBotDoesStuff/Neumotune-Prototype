@@ -112,7 +112,7 @@ use_collision = true
 size = Vector3(0.53015137, 6.117798, 7.10672)
 material = SubResource("StandardMaterial3D_1fcac")
 script = ExtResource("7_1fcac")
-target_scene_path = "C:/Users/26siggaxanc_washk12/Documents/GitHub/Neumotune-Prototype/neumotone-prototype/proto2/2D Scene.tscn"
+target_scene_path = "res://proto2/2D Scene.tscn"
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Models/EVILDoor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045829773, -0.6204314, 3.8232098)

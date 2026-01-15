@@ -1,4 +1,4 @@
-
+class_name PlayerHud
 extends Control
 
 @onready var crosshair: TextureRect = $Crosshair
@@ -10,6 +10,8 @@ const INTERACT_CROSSHAIR = preload("uid://edbd6v152kbm")
 func _ready() -> void:
 	crosshair.texture = NON_INTERACT_CROSSHAIR
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func set_interactable_hover(is_hovering: bool):
+	if is_hovering:
+		crosshair.texture = INTERACT_CROSSHAIR
+	else:
+		crosshair.texture = NON_INTERACT_CROSSHAIR
