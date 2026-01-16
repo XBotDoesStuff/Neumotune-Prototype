@@ -33,6 +33,7 @@ var break_value : int = 0
 @onready var shit_port: SubViewport = $ShitPort
 @onready var good_port: SubViewport = $GoodPort
 @onready var goodport_cam: Camera3D = $"GoodPort/Camera3D"
+var hud: PlayerHud
 
 
 func _ready():
@@ -64,8 +65,15 @@ func _process(_delta):
 	# Check if the interactioncast raycast is colliding with an Interactable
 	if interaction_cast.is_colliding():
 		var collision_object = interaction_cast.get_collider()
-		if collision_object is Interactable and Input.is_action_just_pressed("interact"):
-			collision_object.interact()
+		if collision_object is Interactable:
+			if hud:
+				hud.set_interactable_hover(true)
+			if Input.is_action_just_pressed("interact"):
+				collision_object.interact()
+		elif collision_object is not Interactable:
+			hud.set_interactable_hover(false)
+	elif hud:
+		hud.set_interactable_hover(false)
 
 
 func _physics_process(delta):
