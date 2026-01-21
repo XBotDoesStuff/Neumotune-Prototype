@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3smwew60leci"]
+[gd_scene load_steps=11 format=3 uid="uid://d3smwew60leci"]
 
 [ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://Scenes/player.tscn" id="1_66bqc"]
 [ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://Scenes/display_layer.tscn" id="2_2e4xm"]
 [ext_resource type="PackedScene" uid="uid://rpk3m2r46ad7" path="res://new_cubicle.tscn" id="4_akb2x"]
+[ext_resource type="Script" uid="uid://1gjt825wktpu" path="res://Scripts/Interactables/audio_interactable.gd" id="4_w32qt"]
+[ext_resource type="AudioStream" uid="uid://bs1tao8onbqn4" path="res://protov1/audio/Fnaf 1 Night 1 Call.mp3" id="5_c00ye"]
+[ext_resource type="ArrayMesh" uid="uid://j5s5v5o50cwq" path="res://protov1/model meshes/office_phone.res" id="6_e2ec0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_66bqc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -20,6 +23,9 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.2
 volumetric_fog_albedo = Color(0.9622794, 0.82029456, 0.8325688, 1)
 volumetric_fog_temporal_reprojection_enabled = false
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_02o0y"]
+size = Vector3(14.155279, 16.432556, 8.019897)
 
 [node name="4dScene" type="Node3D"]
 
@@ -402,3 +408,24 @@ size = Vector3(19.495655, 5.607849, 0.3425064)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1334991, 5.4732223, -19.179192)
 use_collision = true
 size = Vector3(19.495655, 0.1706543, 40.076393)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.5980925, 5.548789, -25.699165)
+light_energy = 15.186
+spot_range = 6.9047995
+spot_angle = 10.9308815
+
+[node name="PhoneLog" type="StaticBody3D" parent="."]
+transform = Transform3D(0.010801856, 0.027987853, 4.7216414e-10, -1.3113417e-09, 5.732058e-17, 0.03, 0.027987853, -0.010801856, 1.223388e-09, -1.1980621, 0.88161194, -25.195215)
+script = ExtResource("4_w32qt")
+audio_file = ExtResource("5_c00ye")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PhoneLog"]
+transform = Transform3D(1, -3.5527137e-15, 3.5527137e-15, 3.5527137e-15, 1, 0, -3.5527137e-15, 2.1175824e-22, 1, 0, 0, 0.6351166)
+mesh = ExtResource("6_e2ec0")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="PhoneLog"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhoneLog"]
+transform = Transform3D(1, -1.1475265e-12, 1.1475265e-12, 1.1475265e-12, 1, -7.19978e-21, -1.1475265e-12, 4.0445823e-20, 1, -0.053215027, 0.10391235, 3.509941)
+shape = SubResource("BoxShape3D_02o0y")
