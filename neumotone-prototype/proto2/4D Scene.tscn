@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://Scenes/player.tscn" id="1_66bqc"]
 [ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://Scenes/display_layer.tscn" id="2_2e4xm"]
-[ext_resource type="PackedScene" uid="uid://rpk3m2r46ad7" path="res://new_cubicle.tscn" id="4_akb2x"]
+[ext_resource type="PackedScene" path="res://new_cubicle.tscn" id="4_akb2x"]
 [ext_resource type="Script" uid="uid://1gjt825wktpu" path="res://Scripts/Interactables/audio_interactable.gd" id="4_w32qt"]
 [ext_resource type="AudioStream" uid="uid://bs1tao8onbqn4" path="res://protov1/audio/Fnaf 1 Night 1 Call.mp3" id="5_c00ye"]
 [ext_resource type="ArrayMesh" uid="uid://j5s5v5o50cwq" path="res://protov1/model meshes/office_phone.res" id="6_e2ec0"]
