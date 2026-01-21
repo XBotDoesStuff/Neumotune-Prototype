@@ -81,6 +81,7 @@ layers = 256
 radius = 0.5876797
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Models/CSGSphere3D"]
+layers = 768
 aabb = AABB(-0.54403067, -0.48733082, -0.51719475, 1.0880613, 0.97466165, 1.0343895)
 script = ExtResource("4_tunce")
 
@@ -115,7 +116,7 @@ target_scene_path = "res://proto2/2D Scene.tscn"
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Models/EVILDoor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045829773, -0.6204314, 3.8232098)
-layers = 769
+layers = 768
 aabb = AABB(-0.58923477, -4.502722, -3.824981, 1.0212429, 7.830883, 7.091368)
 script = ExtResource("4_tunce")
 

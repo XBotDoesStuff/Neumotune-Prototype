@@ -8,4 +8,4 @@ func interact():
 	super.interact()
 	
 	await get_tree().create_timer(wait_time).timeout
-	get_tree().change_scene_to_file(target_scene_path)
+	GlobalManager.change_scene(target_scene_path)

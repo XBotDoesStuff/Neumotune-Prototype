@@ -18,7 +18,7 @@ var health : float
 var snapshot_texture : Texture
 @export var shitport_max_width : int = 256
 @export var shitport_max_height : int = 144
-var shitport_degradation : float = 1
+var shitport_degradation : float = 1 : set = set_shitport_degradation
 @export var max_degradation : float = 0.1
 @export var deg_decrease = 0.9
 @export var evil_deg_decrease = 0.5
@@ -48,6 +48,9 @@ func _ready():
 	
 	# Sets the size of the shitport to be the max width and height set in the editor
 	shit_port.size = Vector2i(shitport_max_width, shitport_max_height)
+	
+	# Load the player data from GLobalManager
+	GlobalManager.load_player_data()
 
 func _process(_delta):
 	# Sets the shitport and goodport cameras to match the player camera's transform
