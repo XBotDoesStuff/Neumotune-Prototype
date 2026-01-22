@@ -42,6 +42,8 @@ func _ready():
 	
 	# Disables the camera3d node so the scene is rendered twice
 	player_cam.current = false
+	goodport_cam.current = true
+	shitport_cam.current = true
 	
 	# Declares the player in the global manager
 	GlobalManager.player = self
