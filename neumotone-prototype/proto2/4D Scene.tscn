@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3smwew60leci"]
+[gd_scene load_steps=14 format=3 uid="uid://d3smwew60leci"]
 
 [ext_resource type="PackedScene" uid="uid://d15qu2xnew6w" path="res://Scenes/player.tscn" id="1_66bqc"]
 [ext_resource type="PackedScene" uid="uid://dgtq0gi58lvwn" path="res://Scenes/display_layer.tscn" id="2_2e4xm"]
@@ -23,6 +23,43 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.2
 volumetric_fog_albedo = Color(0.9622794, 0.82029456, 0.8325688, 1)
 volumetric_fog_temporal_reprojection_enabled = false
+
+[sub_resource type="Animation" id="Animation_w32qt"]
+resource_name = "flicker"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16676667, 0.2, 0.26666668, 0.5, 0.56666666, 0.6333333, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [15.186, 3.883, 16.0, 2.789, 16.0, 10.862, 10.862, 0.0, 16.0, 16.0]
+}
+
+[sub_resource type="Animation" id="Animation_c00ye"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [15.186]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e2ec0"]
+_data = {
+&"RESET": SubResource("Animation_c00ye"),
+&"flicker": SubResource("Animation_w32qt")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_02o0y"]
 size = Vector3(14.155279, 16.432556, 8.019897)
@@ -414,6 +451,11 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.5
 light_energy = 15.186
 spot_range = 6.9047995
 spot_angle = 10.9308815
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SpotLight3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_e2ec0")
+}
 
 [node name="PhoneLog" type="StaticBody3D" parent="."]
 transform = Transform3D(0.010801856, 0.027987853, 4.7216414e-10, -1.3113417e-09, 5.732058e-17, 0.03, 0.027987853, -0.010801856, 1.223388e-09, -1.1980621, 0.88161194, -25.195215)
