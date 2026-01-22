@@ -16,4 +16,4 @@ func interact():
 		add_child(audio_player)
 		audio_player.finished.connect(queue_free)
 		audio_player.stream = audio_file
-		audio_player.play(0.0)
+		audio_player.play()
