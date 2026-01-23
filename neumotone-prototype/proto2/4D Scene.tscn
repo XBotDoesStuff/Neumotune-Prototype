@@ -47,9 +47,9 @@ use_collision = true
 size = Vector3(0.32008076, 5.6238403, 40.12522)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1334991, -0.02722168, -19.179192)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2645292, -0.02722168, -19.179192)
 use_collision = true
-size = Vector3(19.495655, 0.1706543, 40.076393)
+size = Vector3(19.757715, 0.1706543, 40.076393)
 
 [node name="chode" type="Node3D" parent="."]
 
@@ -395,19 +395,19 @@ use_collision = true
 size = Vector3(0.32071233, 5.5950165, 40.144264)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1334991, 2.6913757, 0.68775177)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2063627, 2.6913757, 0.68775177)
 use_collision = true
-size = Vector3(19.495655, 5.607849, 0.3425064)
+size = Vector3(19.641382, 5.607849, 0.3425064)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1334991, 2.6913757, -39.120537)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3027983, 2.6913757, -39.120537)
 use_collision = true
-size = Vector3(19.495655, 5.607849, 0.3425064)
+size = Vector3(19.834253, 5.607849, 0.3425064)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1334991, 5.4732223, -19.179192)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3465538, 5.4732223, -19.179192)
 use_collision = true
-size = Vector3(19.495655, 0.1706543, 40.076393)
+size = Vector3(19.921764, 0.1706543, 40.076393)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.5980925, 5.548789, -25.699165)
